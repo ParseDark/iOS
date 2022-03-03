@@ -26,5 +26,15 @@ struct VPNConnecteDurationView: View {
             let ss = duration % 60
             connectedDuration = String(format: "%02d:%02d:%02d", hs, ms, ss)
         }
+        .onChange(of: controller.connectionStatus) { status in
+            switch status {
+            case .invalid, .connecting, .disconnected:
+                connectedDuration = ""
+            case .connected, .disconnecting, .reasserting:
+                break
+            @unknown default:
+                connectedDuration = ""
+            }
+        }
     }
 }
