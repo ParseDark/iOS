@@ -12,7 +12,7 @@ struct ClashApp: App {
             ContentView()
                 .environmentObject(manager)
                 .environment(\.trafficFormatter, ClashTrafficFormatterKey.defaultValue)
-                .environment(\.managedObjectContext, ConfigurationStore.shared.container.viewContext)
+                .environment(\.managedObjectContext, Store.shared.container.viewContext)
         }
     }
 }

@@ -1,8 +1,8 @@
 import CoreData
 
-public final class ConfigurationStore {
+public final class Store {
     
-    public static let shared = ConfigurationStore()
+    public static let shared = Store()
 
     public let container: NSPersistentContainer
 
