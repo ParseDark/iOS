@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" defaultDateTimeInterval="-72000" usesScalarValueType="NO"/>
+        <attribute name="link" attributeType="URI" defaultValueString="file:///"/>
+        <attribute name="name" attributeType="String" defaultValueString="Clash"/>
+        <attribute name="uuid" attributeType="UUID" defaultValueString="00000000-0000-0000-0000-000000000000" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Configuration" positionX="-63" positionY="-18" width="128" height="89"/>
+    </elements>
+</model>
