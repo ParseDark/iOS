@@ -25,16 +25,19 @@ struct VPNStateView: View {
                         .onTapGesture(perform: toggleVPN)
                 }
         }
-        .onChange(of: controller.connectionStatus) { status in
-            withAnimation(.default) {
-                switch status {
-                case .invalid, .disconnecting, .disconnected:
-                    isVPNOn = false
-                case .connecting, .connected, .reasserting:
-                    isVPNOn = true
-                @unknown default:
-                    isVPNOn = false
-                }
+        .onChange(of: controller.connectionStatus, perform: updateToggle(_:))
+        .onAppear { self.updateToggle(controller.connectionStatus) }
+    }
+    
+    private func updateToggle(_ status: NEVPNStatus) {
+        withAnimation(.default) {
+            switch status {
+            case .invalid, .disconnecting, .disconnected:
+                isVPNOn = false
+            case .connecting, .connected, .reasserting:
+                isVPNOn = true
+            @unknown default:
+                isVPNOn = false
             }
         }
     }

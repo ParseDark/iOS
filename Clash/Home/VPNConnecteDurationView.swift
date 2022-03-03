@@ -2,7 +2,7 @@ import SwiftUI
 
 struct VPNConnecteDurationView: View {
     
-    @EnvironmentObject private var manager: VPNManager
+    @EnvironmentObject private var controller: VPNController
     
     @State private var connectedDuration: String = ""
     
@@ -17,8 +17,8 @@ struct VPNConnecteDurationView: View {
                 .foregroundColor(.secondary)
         }
         .onReceive(Timer.publish(every: 0.5, on: .current, in: .common).autoconnect()) { _ in
-            guard let controller = manager.controller, let date = controller.connectedDate else {
-                return connectedDuration = "--:--:--"
+            guard let date = controller.connectedDate else {
+                return connectedDuration = ""
             }
             let duration = Int64(abs(date.timeIntervalSinceNow))
             let hs = duration / 3600
