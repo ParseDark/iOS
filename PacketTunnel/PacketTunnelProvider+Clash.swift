@@ -2,7 +2,7 @@ import Foundation
 import CommonKit
 import ClashKit
 
-extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashNativeLoggerProtocol {
+extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverProtocol, ClashRealTimeLoggerProtocol {
     
     func setupClash() throws {
         let config = """
@@ -15,7 +15,7 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         if let error = error {
             throw error
         }
-        ClashSetNativeLogger(self)
+        ClashSetRealTimeLogger(self)
         ClashSetTrafficReceiver(self)
     }
     
