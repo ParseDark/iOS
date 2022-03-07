@@ -14,7 +14,7 @@
 		D913C9AA27BF2F7900A790FF /* Config-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D913C9A727BF2F7900A790FF /* Config-Debug.xcconfig */; };
 		D955EE5327A513D6003C072A /* NSManagedObjectContext+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955EE5227A513D6003C072A /* NSManagedObjectContext+File.swift */; };
 		D9647860279FE37A003A6648 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D964785E279FE37A003A6648 /* Clash.xcdatamodeld */; };
-		D9647862279FE3C6003A6648 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9647861279FE3C6003A6648 /* Store.swift */; };
+		D9647862279FE3C6003A6648 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9647861279FE3C6003A6648 /* CoreDataStack.swift */; };
 		D964786627A0E455003A6648 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786527A0E455003A6648 /* ClashHomeView.swift */; };
 		D964786927A0E793003A6648 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786827A0E793003A6648 /* ClashConfigListView.swift */; };
 		D964786B27A12718003A6648 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786A27A12718003A6648 /* ManagedObjectFetchView.swift */; };
@@ -109,7 +109,7 @@
 		D955EE5227A513D6003C072A /* NSManagedObjectContext+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+File.swift"; sourceTree = "<group>"; };
 		D955EE5427A51F57003C072A /* ClashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashError.swift; sourceTree = "<group>"; };
 		D964785F279FE37A003A6648 /* Clash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clash.xcdatamodel; sourceTree = "<group>"; };
-		D9647861279FE3C6003A6648 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D9647861279FE3C6003A6648 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D964786527A0E455003A6648 /* ClashHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashHomeView.swift; sourceTree = "<group>"; };
 		D964786827A0E793003A6648 /* ClashConfigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashConfigListView.swift; sourceTree = "<group>"; };
 		D964786A27A12718003A6648 /* ManagedObjectFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectFetchView.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				D9BBA6A827980571002420FA /* AppDelegate.swift */,
 				D9ACEEFE2797F45F0004E32D /* ClashApp.swift */,
 				D9ACEF002797F45F0004E32D /* ContentView.swift */,
-				D9647861279FE3C6003A6648 /* Store.swift */,
+				D9647861279FE3C6003A6648 /* CoreDataStack.swift */,
 				D964787427A266FB003A6648 /* VPNManager.swift */,
 				D955EE5227A513D6003C072A /* NSManagedObjectContext+File.swift */,
 				D9B4FC8E27CF0A670018035A /* ClashTrafficFormatter.swift */,
@@ -458,7 +458,7 @@
 				D9647860279FE37A003A6648 /* Clash.xcdatamodeld in Sources */,
 				D9A3992727CF6BA70047E47D /* ClashConfigView.swift in Sources */,
 				D964787527A266FB003A6648 /* VPNManager.swift in Sources */,
-				D9647862279FE3C6003A6648 /* Store.swift in Sources */,
+				D9647862279FE3C6003A6648 /* CoreDataStack.swift in Sources */,
 				D9B4FC8B27CF01880018035A /* ClashTunnelModeView.swift in Sources */,
 				D964786627A0E455003A6648 /* ClashHomeView.swift in Sources */,
 				D9A3992D27D07E4A0047E47D /* ModalPresentationLink.swift in Sources */,
