@@ -27,11 +27,8 @@ struct ClashHomeView: View {
                     ClashTrafficUpView()
                     ClashTrafficDownView()
                 }
-                Section {
-                    ClashLogView()
-                }
             }
-            .navigationBarTitle("Clash")
+            .navigationBarTitle("主页")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

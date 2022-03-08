@@ -6,6 +6,8 @@ public enum Constant {
     
     public static let tunnelMode: String = "ClashTunnelMode"
     
+    public static let logLevel: String = "ClashLogLevel"
+    
     public static let currentConfigUUID: String = "CurrentConfigUUID"
     
     public static let homeDirectoryURL: URL = {

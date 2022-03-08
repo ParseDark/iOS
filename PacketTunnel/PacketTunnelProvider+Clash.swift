@@ -44,15 +44,6 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         guard let level = level, let payload = payload else {
             return
         }
-        let context = CoreDataStack.shared.container.viewContext
-        let log = ClashLog(context: context)
-        log.date = Date()
-        log.level = level
-        log.payload = payload
-        do {
-            try context.save()
-        } catch {
-            debugPrint(error.localizedDescription)
-        }
+        NSLog("LEVEL: \(level), PAYLOAD: \(payload)")
     }
 }

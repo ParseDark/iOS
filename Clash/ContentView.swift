@@ -2,7 +2,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ClashHomeView()
+        TabView {
+            ClashHomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("主页")
+                }
+            SettingView()
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text("设置")
+                }
+        }
+        
     }
 }
 
