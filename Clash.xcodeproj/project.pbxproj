@@ -50,6 +50,8 @@
 		D9BBA841279EAE26002420FA /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBA840279EAE26002420FA /* ClashConfigImportView.swift */; };
 		D9D9ED4B27D6EB82006CDF61 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9647861279FE3C6003A6648 /* CoreDataStack.swift */; };
 		D9D9ED4C27D6EB88006CDF61 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D964785E279FE37A003A6648 /* Clash.xcdatamodeld */; };
+		D9D9ED4E27D7152F006CDF61 /* ClashLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9ED4D27D7152F006CDF61 /* ClashLogView.swift */; };
+		D9D9ED5027D72ADD006CDF61 /* ClashLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9ED4F27D72ADD006CDF61 /* ClashLogLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,8 @@
 		D9BBA6A827980571002420FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9BBA6AA27980B52002420FA /* Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Country.mmdb; sourceTree = "<group>"; };
 		D9BBA840279EAE26002420FA /* ClashConfigImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashConfigImportView.swift; sourceTree = "<group>"; };
+		D9D9ED4D27D7152F006CDF61 /* ClashLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashLogView.swift; sourceTree = "<group>"; };
+		D9D9ED4F27D72ADD006CDF61 /* ClashLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashLogLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				D9B4FC9627CF38980018035A /* VPNConnecteDurationView.swift */,
 				D9B4FC8A27CF01880018035A /* ClashTunnelModeView.swift */,
 				D9B4FC8C27CF07E60018035A /* ClashTrafficView.swift */,
+				D9D9ED4D27D7152F006CDF61 /* ClashLogView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				D9A3992A27D06B430047E47D /* ClashTraffic.swift */,
 				D9823B6E27CCD9420043A9FB /* ClashCommand.swift */,
 				D955EE5427A51F57003C072A /* ClashError.swift */,
+				D9D9ED4F27D72ADD006CDF61 /* ClashLogLevel.swift */,
 				D9D9ED4A27D6EB4E006CDF61 /* CoreData */,
 			);
 			path = CommonKit;
@@ -453,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D955EE5327A513D6003C072A /* NSManagedObjectContext+File.swift in Sources */,
+				D9D9ED4E27D7152F006CDF61 /* ClashLogView.swift in Sources */,
 				D9A3992F27D094050047E47D /* ClashConfigImportButton.swift in Sources */,
 				D9A3992927CF6E800047E47D /* VPNStateView.swift in Sources */,
 				D9BBA6A927980571002420FA /* AppDelegate.swift in Sources */,
@@ -491,6 +498,7 @@
 				D9B4FC8727CE0C370018035A /* ClashError.swift in Sources */,
 				D9A3992B27D06B430047E47D /* ClashTraffic.swift in Sources */,
 				D9B4FC8427CE0C370018035A /* UserDefaults+AppGroup.swift in Sources */,
+				D9D9ED5027D72ADD006CDF61 /* ClashLogLevel.swift in Sources */,
 				D9B4FC8327CE0C370018035A /* Constant.swift in Sources */,
 				D9D9ED4C27D6EB88006CDF61 /* Clash.xcdatamodeld in Sources */,
 				D9B4FC8527CE0C370018035A /* ClashTunnelMode.swift in Sources */,

@@ -6,7 +6,13 @@
         <attribute name="name" attributeType="String" defaultValueString="Clash"/>
         <attribute name="uuid" attributeType="UUID" defaultValueString="00000000-0000-0000-0000-000000000000" usesScalarValueType="NO"/>
     </entity>
+    <entity name="ClashLog" representedClassName="ClashLog" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="level" optional="YES" attributeType="String"/>
+        <attribute name="payload" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="ClashConfig" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="ClashLog" positionX="-54" positionY="18" width="128" height="74"/>
     </elements>
 </model>

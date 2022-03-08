@@ -27,6 +27,9 @@ struct ClashHomeView: View {
                     ClashTrafficUpView()
                     ClashTrafficDownView()
                 }
+                Section {
+                    ClashLogView()
+                }
             }
             .navigationBarTitle("Clash")
             .navigationBarTitleDisplayMode(.inline)
