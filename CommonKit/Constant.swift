@@ -2,7 +2,7 @@ import Foundation
 
 public enum Constant {
     
-    public static let appGroup = "group.com.Arror.Clash"
+    public static let appGroup: String = Bundle.main.infoDictionary?["CLASH_APP_GROUP"] as! String
     
     public static let tunnelMode: String = "ClashTunnelMode"
     
