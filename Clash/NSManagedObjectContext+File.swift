@@ -17,7 +17,7 @@ extension NSManagedObjectContext {
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
         let targetURL = directoryURL.appendingPathComponent("config.yaml")
         FileManager.default.createFile(atPath: targetURL.path, contents: content.data(using: .utf8), attributes: nil)
-        let configuration = Configuration(context: self)
+        let configuration = ClashConfig(context: self)
         configuration.uuid = uuid
         configuration.name = name
         configuration.link = targetURL
@@ -25,7 +25,7 @@ extension NSManagedObjectContext {
         try self.save()
     }
     
-    func deleteClashConfig(_ config: Configuration) throws {
+    func deleteClashConfig(_ config: ClashConfig) throws {
         self.delete(config)
         try self.save()
         guard let uuid = config.uuid else {

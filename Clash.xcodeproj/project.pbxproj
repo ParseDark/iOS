@@ -13,8 +13,6 @@
 		D913C9A827BF2F7900A790FF /* Config-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D913C9A727BF2F7900A790FF /* Config-Debug.xcconfig */; };
 		D913C9AA27BF2F7900A790FF /* Config-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D913C9A727BF2F7900A790FF /* Config-Debug.xcconfig */; };
 		D955EE5327A513D6003C072A /* NSManagedObjectContext+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955EE5227A513D6003C072A /* NSManagedObjectContext+File.swift */; };
-		D9647860279FE37A003A6648 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D964785E279FE37A003A6648 /* Clash.xcdatamodeld */; };
-		D9647862279FE3C6003A6648 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9647861279FE3C6003A6648 /* CoreDataStack.swift */; };
 		D964786627A0E455003A6648 /* ClashHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786527A0E455003A6648 /* ClashHomeView.swift */; };
 		D964786927A0E793003A6648 /* ClashConfigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786827A0E793003A6648 /* ClashConfigListView.swift */; };
 		D964786B27A12718003A6648 /* ManagedObjectFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964786A27A12718003A6648 /* ManagedObjectFetchView.swift */; };
@@ -50,6 +48,8 @@
 		D9BBA6A927980571002420FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBA6A827980571002420FA /* AppDelegate.swift */; };
 		D9BBA6AB27980B52002420FA /* Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D9BBA6AA27980B52002420FA /* Country.mmdb */; };
 		D9BBA841279EAE26002420FA /* ClashConfigImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBA840279EAE26002420FA /* ClashConfigImportView.swift */; };
+		D9D9ED4B27D6EB82006CDF61 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9647861279FE3C6003A6648 /* CoreDataStack.swift */; };
+		D9D9ED4C27D6EB88006CDF61 /* Clash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D964785E279FE37A003A6648 /* Clash.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,7 +231,6 @@
 				D9BBA6A827980571002420FA /* AppDelegate.swift */,
 				D9ACEEFE2797F45F0004E32D /* ClashApp.swift */,
 				D9ACEF002797F45F0004E32D /* ContentView.swift */,
-				D9647861279FE3C6003A6648 /* CoreDataStack.swift */,
 				D964787427A266FB003A6648 /* VPNManager.swift */,
 				D955EE5227A513D6003C072A /* NSManagedObjectContext+File.swift */,
 				D9B4FC8E27CF0A670018035A /* ClashTrafficFormatter.swift */,
@@ -243,7 +242,6 @@
 				D9BBA6AA27980B52002420FA /* Country.mmdb */,
 				D9ACEF022797F4640004E32D /* Assets.xcassets */,
 				D9ACEF0C2797F4880004E32D /* Info.plist */,
-				D964785E279FE37A003A6648 /* Clash.xcdatamodeld */,
 				D9ACEF132797FCEA0004E32D /* Clash.entitlements */,
 				D9ACEF042797F4640004E32D /* Preview Content */,
 			);
@@ -287,8 +285,18 @@
 				D9A3992A27D06B430047E47D /* ClashTraffic.swift */,
 				D9823B6E27CCD9420043A9FB /* ClashCommand.swift */,
 				D955EE5427A51F57003C072A /* ClashError.swift */,
+				D9D9ED4A27D6EB4E006CDF61 /* CoreData */,
 			);
 			path = CommonKit;
+			sourceTree = "<group>";
+		};
+		D9D9ED4A27D6EB4E006CDF61 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D9647861279FE3C6003A6648 /* CoreDataStack.swift */,
+				D964785E279FE37A003A6648 /* Clash.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,10 +463,8 @@
 				70A9E33C279ED48E00E6E8AF /* DocumentPickerView.swift in Sources */,
 				D9B4FC8D27CF07E60018035A /* ClashTrafficView.swift in Sources */,
 				D9B4FC9527CF2F2E0018035A /* VPNConfigView.swift in Sources */,
-				D9647860279FE37A003A6648 /* Clash.xcdatamodeld in Sources */,
 				D9A3992727CF6BA70047E47D /* ClashConfigView.swift in Sources */,
 				D964787527A266FB003A6648 /* VPNManager.swift in Sources */,
-				D9647862279FE3C6003A6648 /* CoreDataStack.swift in Sources */,
 				D9B4FC8B27CF01880018035A /* ClashTunnelModeView.swift in Sources */,
 				D964786627A0E455003A6648 /* ClashHomeView.swift in Sources */,
 				D9A3992D27D07E4A0047E47D /* ModalPresentationLink.swift in Sources */,
@@ -481,10 +487,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D9ED4B27D6EB82006CDF61 /* CoreDataStack.swift in Sources */,
 				D9B4FC8727CE0C370018035A /* ClashError.swift in Sources */,
 				D9A3992B27D06B430047E47D /* ClashTraffic.swift in Sources */,
 				D9B4FC8427CE0C370018035A /* UserDefaults+AppGroup.swift in Sources */,
 				D9B4FC8327CE0C370018035A /* Constant.swift in Sources */,
+				D9D9ED4C27D6EB88006CDF61 /* Clash.xcdatamodeld in Sources */,
 				D9B4FC8527CE0C370018035A /* ClashTunnelMode.swift in Sources */,
 				D9B4FC8627CE0C370018035A /* ClashCommand.swift in Sources */,
 			);

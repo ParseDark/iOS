@@ -8,9 +8,9 @@ struct ClashConfigListView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var context
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Configuration.date, ascending: false)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \ClashConfig.date, ascending: false)],
         animation: .default
-    ) private var configs: FetchedResults<Configuration>
+    ) private var configs: FetchedResults<ClashConfig>
         
     var body: some View {
         NavigationView {
@@ -41,12 +41,12 @@ struct ClashConfigListView: View {
         }
     }
     
-    private func onCellTapGesture(config: Configuration) {
+    private func onCellTapGesture(config: ClashConfig) {
         uuidString = config.uuid?.uuidString ?? ""
         dismiss()
     }
     
-    private func onCellDeleteAction(config: Configuration) {
+    private func onCellDeleteAction(config: ClashConfig) {
         do {
             if config.uuid.flatMap({ $0.uuidString }) == uuidString {
                 uuidString = ""

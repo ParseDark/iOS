@@ -1,5 +1,12 @@
 import CoreData
 
+private class ClashPersistentContainer: NSPersistentContainer {
+    
+    override class func defaultDirectoryURL() -> URL {
+        Constant.homeDirectoryURL.appendingPathComponent("CoreData", isDirectory: true)
+    }
+}
+
 public final class CoreDataStack {
     
     public static let shared = CoreDataStack()
@@ -7,7 +14,11 @@ public final class CoreDataStack {
     public let container: NSPersistentContainer
 
     private init() {
-        self.container = NSPersistentContainer(name: "Clash")
+        guard let url = Bundle(for: CoreDataStack.self).url(forResource: "Clash", withExtension: "momd"),
+              let model = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("数据库模型文件加载失败")
+        }
+        self.container = ClashPersistentContainer(name: "Clash", managedObjectModel: model)
         self.loadPersistentStores()
     }
     

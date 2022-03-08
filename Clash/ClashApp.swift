@@ -1,4 +1,5 @@
 import SwiftUI
+import CommonKit
 
 @main
 struct ClashApp: App {
