@@ -8,7 +8,7 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         let config = """
         mixed-port: 8080
         mode: \(UserDefaults.shared.string(forKey: Constant.tunnelMode) ?? ClashTunnelMode.rule.rawValue)
-        log-level: info
+        log-level: \(UserDefaults.shared.string(forKey: Constant.logLevel) ?? ClashLogLevel.silent.rawValue)
         """
         var error: NSError? = nil
         ClashSetup(self, Constant.homeDirectoryURL.path, config, &error)

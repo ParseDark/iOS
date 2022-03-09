@@ -3,7 +3,9 @@ import CommonKit
 
 struct ClashLogView: View {
     
-    @AppStorage(Constant.logLevel, store: .shared) private var logLevel: ClashLogLevel = .slient
+    @EnvironmentObject private var manager: VPNManager
+    
+    @AppStorage(Constant.logLevel, store: .shared) private var logLevel: ClashLogLevel = .silent
         
     var body: some View {
         NavigationLink {
@@ -17,6 +19,16 @@ struct ClashLogView: View {
                 .labelsHidden()
             }
             .navigationBarTitle("日志等级")
+            .task(id: logLevel) {
+                guard let controller = self.manager.controller else {
+                    return
+                }
+                do {
+                    try await controller.execute(command: .setLogLevel)
+                } catch {
+                    debugPrint(error)
+                }
+            }
         } label: {
             HStack {
                 Image(systemName: "doc.text")
@@ -35,7 +47,7 @@ fileprivate extension ClashLogLevel {
     
     var displayName: String {
         switch self {
-        case .slient:
+        case .silent:
             return "静默"
         case .info:
             return "信息"
