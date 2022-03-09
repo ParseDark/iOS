@@ -21,7 +21,7 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     
     func setCurrentConfig() throws {
         var error: NSError? = nil
-        ClashApplyConfig(UserDefaults.shared.string(forKey: Constant.currentConfigUUID), &error)
+        ClashSetConfig(UserDefaults.shared.string(forKey: Constant.currentConfigUUID), &error)
         guard let error = error else {
             return
         }
