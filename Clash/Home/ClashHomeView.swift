@@ -15,10 +15,9 @@ struct ClashHomeView: View {
                             .environmentObject(controller)
                         VPNConnecteDurationView()
                             .environmentObject(controller)
+                    } else {
+                        VPNConfigView()
                     }
-                }
-                Section {
-                    VPNConfigView()
                 }
                 Section {
                     ClashTunnelModeView()
