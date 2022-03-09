@@ -10,10 +10,9 @@ struct SettingView: View {
                 Section {
                     ClashLogView()
                 }
-                if manager.controller != nil {
-                    Section {
-                        VPNConfigView()
-                    }
+                Section {
+                    UninstallVPNView()
+                        .disabled(manager.controller == nil)
                 }
             }
             .navigationTitle("设置")

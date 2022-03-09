@@ -16,7 +16,7 @@ struct ClashHomeView: View {
                         VPNConnecteDurationView()
                             .environmentObject(controller)
                     } else {
-                        VPNConfigView()
+                        InstallVPNView()
                     }
                 }
                 Section {
