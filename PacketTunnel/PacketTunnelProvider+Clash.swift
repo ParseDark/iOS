@@ -41,9 +41,10 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
     }
     
     func log(_ level: String?, payload: String?) {
-        guard let level = level, let payload = payload else {
+        guard let level = level.flatMap(ClashLogLevel.init(rawValue:)),
+              let payload = payload, !payload.isEmpty else {
             return
         }
-        NSLog("LEVEL: \(level), PAYLOAD: \(payload)")
+        NSLog("Clash Core: [\(level.rawValue.uppercased())] \(payload)")
     }
 }
