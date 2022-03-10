@@ -25,7 +25,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             return settings
         }()
         settings.dnsSettings = {
-            let settings = NEDNSSettings(servers: ["8.8.8.8"])
+            let settings = NEDNSSettings(servers: ["127.0.0.1"])
             return settings
         }()
         try await self.setTunnelNetworkSettings(settings)

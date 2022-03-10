@@ -888,7 +888,7 @@
 			repositoryURL = "https://github.com/Clash-for-Apple/ClashKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.7;
+				version = 1.0.8;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

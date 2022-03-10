@@ -9,6 +9,25 @@ extension PacketTunnelProvider: ClashPacketFlowProtocol, ClashTrafficReceiverPro
         mixed-port: 8080
         mode: \(UserDefaults.shared.string(forKey: Constant.tunnelMode) ?? ClashTunnelMode.rule.rawValue)
         log-level: \(UserDefaults.shared.string(forKey: Constant.logLevel) ?? ClashLogLevel.silent.rawValue)
+        dns:
+          enable: true
+          ipv6: false
+          listen: 0.0.0.0:53
+          enhanced-mode: redir-host
+          use-hosts: false
+          nameserver:
+            - 114.114.114.114
+          fallback:
+            - 8.8.8.8
+            - 1.1.1.1
+            - tls://8.8.8.8:853
+            - tls://1.1.1.1:853
+            - https://dns.google/dns-query
+            - https://cloudflare-dns.com/dns-query
+          fallback-filter:
+            geoip: true
+            ipcidr:
+              - 240.0.0.0/4
         """
         var error: NSError? = nil
         ClashSetup(self, Constant.homeDirectoryURL.path, config, &error)
