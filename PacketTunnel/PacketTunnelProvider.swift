@@ -10,7 +10,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "240.240.240.240")
         settings.mtu = 1500
         settings.ipv4Settings = {
-            let setting = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.255"])
+            let setting = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.0"])
             setting.includedRoutes = [NEIPv4Route.default()]
             return setting
         }()
@@ -18,12 +18,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             let setting = NEProxySettings()
             setting.matchDomains = [""]
             setting.excludeSimpleHostnames = true
-            setting.autoProxyConfigurationEnabled = true
-            setting.proxyAutoConfigurationJavaScript = """
-            function FindProxyForURL(url, host) {
-                return "PROXY 127.0.0.1:8080"
-            }
-            """
+            setting.httpEnabled = true
+            setting.httpServer = NEProxyServer(address: "127.0.0.1", port: 8080)
+            setting.httpsEnabled = true
+            setting.httpsServer = NEProxyServer(address: "127.0.0.1", port: 8080)
             return setting
         }()
         try await self.setTunnelNetworkSettings(settings)
