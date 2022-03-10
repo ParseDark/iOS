@@ -10,19 +10,23 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "240.240.240.240")
         settings.mtu = 1500
         settings.ipv4Settings = {
-            let setting = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.0"])
-            setting.includedRoutes = [NEIPv4Route.default()]
-            return setting
+            let settings = NEIPv4Settings(addresses: ["240.0.0.1"], subnetMasks: ["255.255.255.0"])
+            settings.includedRoutes = [NEIPv4Route.default()]
+            return settings
         }()
         settings.proxySettings = {
-            let setting = NEProxySettings()
-            setting.matchDomains = [""]
-            setting.excludeSimpleHostnames = true
-            setting.httpEnabled = true
-            setting.httpServer = NEProxyServer(address: "127.0.0.1", port: 8080)
-            setting.httpsEnabled = true
-            setting.httpsServer = NEProxyServer(address: "127.0.0.1", port: 8080)
-            return setting
+            let settings = NEProxySettings()
+            settings.matchDomains = [""]
+            settings.excludeSimpleHostnames = true
+            settings.httpEnabled = true
+            settings.httpServer = NEProxyServer(address: "127.0.0.1", port: 8080)
+            settings.httpsEnabled = true
+            settings.httpsServer = NEProxyServer(address: "127.0.0.1", port: 8080)
+            return settings
+        }()
+        settings.dnsSettings = {
+            let settings = NEDNSSettings(servers: ["8.8.8.8"])
+            return settings
         }()
         try await self.setTunnelNetworkSettings(settings)
         DispatchQueue.main.async(execute: self.readPackets)
